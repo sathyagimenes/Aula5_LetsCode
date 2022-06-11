@@ -15,6 +15,7 @@ namespace LetsCodePOOIAula5
             DataCaixa = DateTime.Now;
             Saldo = saldoInicial;
         }
+        /*
         public void Deposita(decimal valor)
         {
             Saldo += valor;
@@ -32,6 +33,7 @@ namespace LetsCodePOOIAula5
         //}
 
         //Solução referente ao exercício proposto em sala de aula
+        */
         public decimal CalcularTroco(decimal valorVenda, decimal dinheiroRecebido)
         {
             if (Validacao(valorVenda, dinheiroRecebido))    

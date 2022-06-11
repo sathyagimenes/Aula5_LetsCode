@@ -21,6 +21,10 @@
 
             //caixaDoDia.Saca(1000);
             //Console.WriteLine(caixaDoDia.Saldo);
+
+            //caixaDoDia.Deposita(50);
+            //Console.WriteLine(caixaDoDia.ObterSaldo());
+
             Console.WriteLine("Deseja registrar uma compra? (s/n)");
             string registroDeCompra = Console.ReadLine();
             while (registroDeCompra != "s" && registroDeCompra != "n")
@@ -53,8 +57,6 @@
                     registroDeCompra = Console.ReadLine();
                 }
             }
-            //caixaDoDia.Deposita(50);
-            //Console.WriteLine(caixaDoDia.ObterSaldo());
         }
     }
 }
