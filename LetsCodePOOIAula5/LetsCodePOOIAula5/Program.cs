@@ -33,19 +33,18 @@
                 Console.Clear();
                 Console.WriteLine("Qual o valor do produto?");
                 decimal valorProduto = decimal.Parse(Console.ReadLine());
-                Console.WriteLine("Qual o valor dado pelo cliente?");
+                Console.WriteLine("Qual o valor entregue pelo cliente?");
                 decimal dinheiroRecebido = decimal.Parse(Console.ReadLine());
-                decimal troco = caixaDoDia.CalcularTroco(valorProduto, dinheiroRecebido);
-                while (troco < 0)
+                while (!caixaDoDia.Validacao(valorProduto, dinheiroRecebido))
                 {
-                    Console.WriteLine("Valor insuficiente. O cliente deve entregar um valor maior");
-                    Console.WriteLine("Qual o novo valor dado pelo cliente?");
+                    Console.WriteLine("Qual o valor do produto?");
+                    valorProduto = decimal.Parse(Console.ReadLine());
+                    Console.WriteLine("Qual o valor dado pelo cliente?");
                     dinheiroRecebido = decimal.Parse(Console.ReadLine());
-                    troco = caixaDoDia.CalcularTroco(valorProduto, dinheiroRecebido);
                 }
+                decimal troco = caixaDoDia.CalcularTroco(valorProduto, dinheiroRecebido);
                 Console.WriteLine($"O troco do cliente é: {troco}");
                 caixaDoDia.DevolverTroco(valorProduto, dinheiroRecebido);
-                Console.WriteLine($"O saldo atual é: {caixaDoDia.Saldo}");
                 Console.WriteLine("Deseja registrar outra compra? (s/n)");
                 registroDeCompra = Console.ReadLine();
                 while (registroDeCompra != "s" && registroDeCompra != "n")
